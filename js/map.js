@@ -10,7 +10,7 @@ class MapPage {
         console.log('🚀 MapPage v10 initialized (No Geolocation)');
         this.dataLoader = new DataLoader();
         this.mapController = null;
-        this.MAPBOX_TOKEN = 'pk.eyJ1Ijoic3RyYWthemEiLCJhIjoiY21pNzl6YnA3MDg4YzJrc2JrcnI2eTBnOCJ9.IVHXNpl2MQ-WHRdBaxWdNA';
+        this.MAPBOX_TOKEN = 'pk.eyJ1Ijoic3RyYWthemEiLCJhIjoiY21pYnlxMXNzMGQ0MDJqcXA4cWo4NWtrNCJ9.UdnRypd7isiPXwjFNKFW7g';
     }
 
     async init() {
