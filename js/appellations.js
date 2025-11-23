@@ -8,7 +8,7 @@ class AppellationsPage {
     constructor() {
         this.dataLoader = new DataLoader();
         this.map = null;
-        this.MAPBOX_TOKEN = 'pk.eyJ1Ijoic3RyYWthemEiLCJhIjoiY21pNzl6YnA3MDg4YzJrc2JrcnI2eTBnOCJ9.IVHXNpl2MQ-WHRdBaxWdNA';
+        this.MAPBOX_TOKEN = 'pk.eyJ1Ijoic3RyYWthemEiLCJhIjoiY21pYnlxMXNzMGQ0MDJqcXA4cWo4NWtrNCJ9.UdnRypd7isiPXwjFNKFW7g';
         this.userMarker = null;
         this.loadedGeoJSONs = new Map(); // Cache for loaded GeoJSONs
         this.visiblePolygons = new Map(); // Currently visible polygons
