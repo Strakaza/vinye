@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ivana-v1';
+const CACHE_NAME = 'Vinye-v1';
 const ASSETS_TO_CACHE = [
     '/',
     '/index.html',
