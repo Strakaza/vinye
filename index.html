@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#8D6E63">
+    <title>Ivana - Parcelles Viticoles de Bourgogne</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.ico">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+    <style>
+        /* Search styles */
+        .search-box {
+            position: relative;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            pointer-events: none;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 40px;
+            padding: 0 24px;
+            background: #6D4C41;
+            color: white;
+            border-radius: 999px;
+            font-weight: 600;
+            transition: all 0.25s;
+        }
+
+        .search-btn:hover {
+            background: #8D6E63;
+            transform: translateY(-50%) scale(1.02);
+        }
+
+        /* Autocomplete */
+        .autocomplete {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            max-height: 400px;
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .autocomplete-item {
+            padding: 16px 20px;
+            border-bottom: 1px solid #e0e0e0;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .autocomplete-item:last-child {
+            border-bottom: none;
+        }
+
+        .autocomplete-item:active {
+            background: #f5f5f5;
+        }
+
+        .autocomplete-name {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 4px;
+            color: #2c2c2c;
+        }
+
+        .autocomplete-details {
+            font-size: 0.875rem;
+            color: #757575;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .map-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 24px;
+            padding: 12px 24px;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 999px;
+            color: #6D4C41;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.2s;
+        }
+
+        .map-link-btn:hover {
+            background: #f5f5f5;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="home-page">
+    <!-- Hero Section -->
+    <main class="hero">
+        <div class="hero-content">
+            <img src="assets/images/logo.svg" alt="Ivana" class="hero-logo">
+            <h1 class="hero-title">Parcelles Viticoles de Bourgogne</h1>
+
+            <!-- Search Bar -->
+            <div class="search-box">
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM19 19l-4.35-4.35" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" />
+                </svg>
+                <input type="text" id="search-input" class="search-input"
+                    placeholder="Rechercher une parcelle (ex: Pommard, Meursault...)" autocomplete="off"
+                    autocorrect="off" autocapitalize="off">
+                <button id="search-btn" class="search-btn">Rechercher</button>
+
+                <!-- Autocomplete -->
+                <div id="autocomplete" class="autocomplete hidden"></div>
+            </div>
+
+            <!-- Map Link -->
+            <a href="appellations.html" class="map-link-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                    <line x1="8" y1="2" x2="8" y2="18"></line>
+                    <line x1="16" y1="6" x2="16" y2="22"></line>
+                </svg>
+                Carte des Appellations
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>"Страказа жывая"</p>
+        <div class="color-bar-signature"></div>
+    </footer>
+
+    <script type="module" src="js/home.js?v=4"></script>
+</body>
+
+</html>
